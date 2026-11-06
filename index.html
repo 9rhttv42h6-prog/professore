@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>'O Professore Pizza | Pizzeria & Rosticceria Ostia Lido</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#8B0000',
+              gold: '#D4AF37',
+              dark: '#1A1810',
+              warm: '#FAF6EF',
+              stone: '#8C8275'
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #1A1810;
+      color: #FAF6EF;
+      font-family: 'Poppins', sans-serif;
+    }
+    .stone-wall {
+      background: linear-gradient(rgba(26,24,16,0.92), rgba(26,24,16,0.95)), 
+                  url('https://images.unsplash.com/photo-1590577976322-3d2d6e2130d5?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+    }
+    .blackboard {
+      background-color: #222523;
+      border: 8px solid #5c4033;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 10px 25px rgba(0,0,0,0.5);
+      font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+    }
+    .chalk-text {
+      color: #f0f0f0;
+      text-shadow: 0 0 2px rgba(255,255,255,0.6);
+    }
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-dark flex flex-col min-h-screen">
+
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/30">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-full border-2 border-brand-gold overflow-hidden bg-brand-red flex items-center justify-center font-serif text-xl font-bold text-brand-gold shadow-lg">
+          OP
+        </div>
+        <div>
+          <h1 class="font-serif text-xl font-bold tracking-wider text-brand-gold uppercase">'O PROFESSORE</h1>
+          <p class="text-xs text-stone-300">Pizzeria & Rosticceria • Ostia Lido</p>
+        </div>
+      </div>
+      
+      <div class="hidden md:flex space-x-6 text-sm font-semibold">
+        <a href="#bancone" class="hover:text-brand-gold transition">Il Bancone</a>
+        <a href="#menu" class="hover:text-brand-gold transition">Il Menu</a>
+        <a href="#magicbox" class="hover:text-brand-gold transition text-yellow-400"><i class="fa-solid fa-box-open mr-1"></i> Offerta 20:00</a>
+        <a href="#maestro" class="hover:text-brand-gold transition">Il Maestro</a>
+        <a href="#contatti" class="hover:text-brand-gold transition">Dove Siamo</a>
+      </div>
+
+      <a href="tel:3923625307" class="bg-brand-gold text-brand-dark px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-yellow-400 transition flex items-center gap-2 shadow-lg">
+        <i class="fa-solid fa-phone"></i> <span>Chiama Ora</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative stone-wall py-16 px-4 border-b border-brand-gold/20">
+      <div class="max-w-5xl mx-auto text-center">
+        <span class="bg-brand-red/80 text-white text-xs px-3 py-1 rounded-full uppercase tracking-widest font-semibold border border-brand-gold/40 inline-block mb-3">
+          Viale dei Promontori 388, Ostia Lido
+        </span>
+        <h2 class="font-serif text-4xl md:text-6xl font-bold mb-3 text-white">
+          L'Arte della <span class="text-brand-gold italic">Pizza in Pala</span> & Rosticceria
+        </h2>
+        <p class="text-stone-300 max-w-2xl mx-auto text-sm md:text-base mb-8">
+          Lavorazione artigianale curata dal Maestro <strong>Ubaldo Brunetti</strong>, vincitore e partecipante ai più grandi campionati europei e mondiali di pizza.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#menu" class="bg-brand-red text-white px-6 py-3 rounded-xl font-bold hover:bg-red-800 transition shadow-lg flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-pizza-slice"></i> Consulta il Menu
+          </a>
+          <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20informazioni%20sulle%20pizze%20e%20sugli%20ordini." target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-500 transition shadow-lg flex items-center gap-2 text-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Ordina via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Il Bancone -->
+    <section id="bancone" class="py-12 bg-black/40">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h3 class="font-serif text-3xl font-bold text-brand-gold">Il Bancone del Giorno</h3>
+          <p class="text-stone-400 text-sm">Cotto al momento, servito caldo. Dalla rosticceria alla pizza in pala.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-brand-dark border border-stone-800 rounded-2xl overflow-hidden shadow-xl hover:border-brand-gold/50 transition">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizza alla Pala" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-brand-red text-white text-xs font-bold px-2 py-1 rounded">Pala Speciale</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-lg text-white mb-1">Pizze alla Pala Assortite</h4>
+              <p class="text-xs text-stone-400 mb-3">A partire da 10€ ad intera pala. Impasto ad alta idratazione e digeribilità.</p>
+              <span class="text-brand-gold text-xs font-semibold"><i class="fa-solid fa-check text-green-500 mr-1"></i> Mozzarella Senza Lattosio Disponibile</span>
+            </div>
+          </div>
+
+          <div class="bg-brand-dark border border-stone-800 rounded-2xl overflow-hidden shadow-xl hover:border-brand-gold/50 transition">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" alt="Pollo e Fritti" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">Rosticceria</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-lg text-white mb-1">Polli allo Spiedo & Fritti</h4>
+              <p class="text-xs text-stone-400 mb-3">Supplì romani croccanti, crocchette di patate calde e polli dorati allo spiedo.</p>
+              <span class="text-brand-gold text-xs font-semibold"><i class="fa-solid fa-fire mr-1 text-orange-500"></i> Sfornati Continui</span>
+            </div>
+          </div>
+
+          <div class="bg-brand-dark border border-stone-800 rounded-2xl overflow-hidden shadow-xl hover:border-brand-gold/50 transition">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Contorni Freschi" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-emerald-700 text-white text-xs font-bold px-2 py-1 rounded">Contorni</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-lg text-white mb-1">Verdure Grigliate & Cotte</h4>
+              <p class="text-xs text-stone-400 mb-3">Cicoria ripassata, broccoletti di stagione, verdure gratinate al forno e contorni di stagione.</p>
+              <span class="text-brand-gold text-xs font-semibold"><i class="fa-solid fa-leaf text-green-400 mr-1"></i> Ingredienti Freschi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lavagna Storica -->
+    <section class="py-10 bg-brand-dark/80">
+      <div class="max-w-md mx-auto px-4">
+        <div class="blackboard p-6 text-center rounded-xl relative">
+          <span class="text-yellow-200 text-xs tracking-widest uppercase mb-2 block font-sans">Lavagna del Giorno</span>
+          <h4 class="chalk-text text-2xl font-bold tracking-wide uppercase leading-relaxed">
+            PRIMI<br>
+            SECONDI<br>
+            CONTORNI<br>
+            PIZZA RIPIENA
+          </h4>
+          <div class="mt-4 pt-3 border-t border-white/20 text-xs text-stone-300 font-sans">
+            Chiedi al bancone o telefona per le disponibilità del giorno!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offerta Magic Box -->
+    <section id="magicbox" class="py-12 bg-gradient-to-r from-red-950/40 via-brand-dark to-yellow-950/30 border-y border-brand-gold/20">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-2 bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+          <i class="fa-solid fa-clock"></i> Inizio Offerta: Dalle 20:00 in Poi
+        </div>
+        <h3 class="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
+          Magic Box <span class="text-brand-gold">Fine Serata</span>
+        </h3>
+        <p class="text-stone-300 text-sm max-w-xl mx-auto mb-6">
+          Per evitare sprechi alimentari e garantirti il massimo della qualità ad un prezzo eccezionale, dalle ore 20:00 componiamo Box a sorpresa con pizze alla pala assortite, fritti e sfizi di rosticceria con <strong>sconti fino al 30%</strong>!
+        </p>
+
+        <div class="bg-black/50 border border-brand-gold/40 rounded-2xl p-6 max-w-lg mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-left">
+            <h5 class="font-bold text-lg text-white">Box Sorpresa 'O Professore</h5>
+            <p class="text-xs text-stone-400">Assortimento di pala, supplì e contorni</p>
+            <div class="mt-2 text-brand-gold font-bold text-xl">
+              10,00€ <span class="text-xs text-stone-500 line-through">15,00€</span>
+            </div>
+          </div>
+          <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20prenotare%20una%20Magic%20Box%20Fine%20Serata!" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-base"></i> Prenota Magic Box
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maestro Ubaldo Brunetti -->
+    <section id="maestro" class="py-12 max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest">Maestro Pizzaiolo</span>
+        <h3 class="font-serif text-3xl font-bold text-white">Ubaldo Brunetti</h3>
+        <p class="text-stone-400 text-sm mt-1">Istituzioni, premi e certificazioni che testimoniano l'eccellenza dell'impasto.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-brand-dark p-6 rounded-2xl border border-stone-800 text-center hover:border-brand-gold/40 transition">
+          <div class="w-12 h-12 mx-auto mb-4 text-brand-gold text-3xl flex items-center justify-center">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h4 class="font-bold text-white text-base mb-2">Accademia Pizzaioli</h4>
+          <p class="text-xs text-stone-400">Attestato di specializzazione riconosciuto per l'arte della <strong>Pizza in Pala</strong>.</p>
+        </div>
+
+        <div class="bg-brand-dark p-6 rounded-2xl border border-stone-800 text-center hover:border-brand-gold/40 transition">
+          <div class="w-12 h-12 mx-auto mb-4 text-brand-gold text-3xl flex items-center justify-center">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h4 class="font-bold text-white text-base mb-2">Coppa Europa</h4>
+          <p class="text-xs text-stone-400">Attestato di partecipazione e qualifica <strong>Pizza Classica</strong> (Edizione 2012).</p>
+        </div>
+
+        <div class="bg-brand-dark p-6 rounded-2xl border border-stone-800 text-center hover:border-brand-gold/40 transition">
+          <div class="w-12 h-12 mx-auto mb-4 text-brand-gold text-3xl flex items-center justify-center">
+            <i class="fa-solid fa-earth-europe"></i>
+          </div>
+          <h4 class="font-bold text-white text-base mb-2">21° Campionato Mondiale</h4>
+          <p class="text-xs text-stone-400">Partecipazione ufficiale al Campionato Mondiale della Pizza (Salsomaggiore Terme).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Informativo -->
+    <section id="menu" class="py-12 bg-black/60 border-t border-stone-800">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h3 class="font-serif text-3xl font-bold text-brand-gold">Il Nostro Menu</h3>
+          <p class="text-stone-400 text-sm">Consulta le nostre specialità ed effettua il tuo ordine diretto via telefono o WhatsApp.</p>
+        </div>
+
+        <!-- Filtri Menu -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8" id="category-filters">
+          <button onclick="filterCategory('all', this)" class="filter-btn bg-brand-gold text-brand-dark font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider">Tutti</button>
+          <button onclick="filterCategory('pala', this)" class="filter-btn bg-stone-800 text-stone-300 font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-stone-700">Pizza alla Pala</button>
+          <button onclick="filterCategory('fritti', this)" class="filter-btn bg-stone-800 text-stone-300 font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-stone-700">Fritti & Rosticceria</button>
+          <button onclick="filterCategory('contorni', this)" class="filter-btn bg-stone-800 text-stone-300 font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-stone-700">Contorni & Primi</button>
+        </div>
+
+        <!-- Lista Menu -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="menu-items">
+          <!-- Item 1 -->
+          <div class="menu-item pala bg-brand-dark p-5 rounded-xl border border-stone-800 flex justify-between items-center">
+            <div>
+              <h5 class="font-bold text-white text-base">Pizza alla Pala Margherita</h5>
+              <p class="text-xs text-stone-400 mt-1">Pomodoro bio, mozzarella, basilico fresco. Disponibile senza lattosio.</p>
+              <span class="text-brand-gold font-bold text-sm mt-2 block">10,00 €</span>
+            </div>
+            <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20ordinare%20una%20Pala%20Margherita" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 text-white p-3 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 ml-4">
+              <i class="fa-brands fa-whatsapp text-sm"></i> <span class="hidden sm:inline">Ordina</span>
+            </a>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="menu-item pala bg-brand-dark p-5 rounded-xl border border-stone-800 flex justify-between items-center">
+            <div>
+              <h5 class="font-bold text-white text-base">Pala Fiori di Zucca & Alici</h5>
+              <p class="text-xs text-stone-400 mt-1">Mozzarella fresca, fiori di zucca locali, alici di Cetara.</p>
+              <span class="text-brand-gold font-bold text-sm mt-2 block">14,00 €</span>
+            </div>
+            <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20ordinare%20una%20Pala%20Fiori%20di%20Zucca%20e%20Alici" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 text-white p-3 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 ml-4">
+              <i class="fa-brands fa-whatsapp text-sm"></i> <span class="hidden sm:inline">Ordina</span>
+            </a>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="menu-item fritti bg-brand-dark p-5 rounded-xl border border-stone-800 flex justify-between items-center">
+            <div>
+              <h5 class="font-bold text-white text-base">Supplì al Telefono Classico</h5>
+              <p class="text-xs text-stone-400 mt-1">Riso al ragù, cuore di mozzarella filante, panatura croccante.</p>
+              <span class="text-brand-gold font-bold text-sm mt-2 block">1,80 €</span>
+            </div>
+            <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20ordinare%20dei%20Supplì%20al%20Telefono" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 text-white p-3 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 ml-4">
+              <i class="fa-brands fa-whatsapp text-sm"></i> <span class="hidden sm:inline">Ordina</span>
+            </a>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="menu-item fritti bg-brand-dark p-5 rounded-xl border border-stone-800 flex justify-between items-center">
+            <div>
+              <h5 class="font-bold text-white text-base">Crocchetta di Patate</h5>
+              <p class="text-xs text-stone-400 mt-1">Patate, prezzemolo, pepe, provola affumicata.</p>
+              <span class="text-brand-gold font-bold text-sm mt-2 block">1,80 €</span>
+            </div>
+            <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20ordinare%20delle%20Crocchette%20di%20Patate" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 text-white p-3 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 ml-4">
+              <i class="fa-brands fa-whatsapp text-sm"></i> <span class="hidden sm:inline">Ordina</span>
+            </a>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="menu-item contorni bg-brand-dark p-5 rounded-xl border border-stone-800 flex justify-between items-center">
+            <div>
+              <h5 class="font-bold text-white text-base">Cicoria Ripassata in Padella</h5>
+              <p class="text-xs text-stone-400 mt-1">Cicoria fresca, aglio, olio EVO e peperoncino.</p>
+              <span class="text-brand-gold font-bold text-sm mt-2 block">4,50 €</span>
+            </div>
+            <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20ordinare%20della%20Cicoria%20Ripassata" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 text-white p-3 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 ml-4">
+              <i class="fa-brands fa-whatsapp text-sm"></i> <span class="hidden sm:inline">Ordina</span>
+            </a>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="menu-item contorni bg-brand-dark p-5 rounded-xl border border-stone-800 flex justify-between items-center">
+            <div>
+              <h5 class="font-bold text-white text-base">Pollo allo Spiedo (Intero)</h5>
+              <p class="text-xs text-stone-400 mt-1">Pollo dorato al girarrosto con aromi mediterranei.</p>
+              <span class="text-brand-gold font-bold text-sm mt-2 block">11,00 €</span>
+            </div>
+            <a href="https://wa.me/393923625307?text=Ciao!%20Vorrei%20ordinare%20un%20Pollo%20allo%20Spiedo" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 text-white p-3 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 ml-4">
+              <i class="fa-brands fa-whatsapp text-sm"></i> <span class="hidden sm:inline">Ordina</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center text-xs text-stone-400 bg-brand-dark/40 p-4 rounded-xl border border-stone-800 max-w-xl mx-auto">
+          <i class="fa-solid fa-lock text-brand-gold mr-1"></i> Gli ordini inviati via WhatsApp o Telefono comportano il trattamento temporaneo dei dati anagrafici ed indirizzo al solo fine di gestire ed evadere la consegna richiesta.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contatti e Footer Legale -->
+  <footer id="contatti" class="bg-brand-dark border-t border-stone-800 pt-12 pb-6 text-stone-300">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+      <div>
+        <h4 class="font-serif text-2xl font-bold text-brand-gold mb-3">'O PROFESSORE PIZZA</h4>
+        <p class="text-sm mb-4">La vera pizza in pala artigianale ad Ostia Lido firmata dal Maestro Ubaldo Brunetti.</p>
+        
+        <div class="space-y-3 text-xs">
+          <p><i class="fa-solid fa-location-dot text-brand-gold w-5"></i> <strong>Sede Operativa:</strong> Viale dei Promontori 388, 00122 Ostia Lido (RM)</p>
+          <p><i class="fa-solid fa-phone text-brand-gold w-5"></i> <strong>Ordinazioni & Info:</strong> <a href="tel:3923625307" class="hover:underline">392 3625307</a></p>
+          <p><i class="fa-solid fa-clock text-brand-gold w-5"></i> <strong>Orari:</strong> Aperto tutti i giorni a cena dalle 18:30</p>
+        </div>
+      </div>
+
+      <div class="bg-stone-900/60 p-6 rounded-2xl border border-stone-800 text-center flex flex-col justify-center items-center">
+        <h5 class="font-bold text-white mb-2">Come Ordinare</h5>
+        <p class="text-xs text-stone-400 mb-6">Non effettuiamo acquisti diretti con carta di credito sul sito. Puoi chiamarci direttamente o inviare un messaggio WhatsApp per prenotare la tua pizza al bancone o a domicilio.</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="tel:3923625307" class="inline-flex items-center gap-2 bg-brand-red text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider hover:bg-red-800 transition">
+            <i class="fa-solid fa-phone"></i> Chiama Ora
+          </a>
+          <a href="https://wa.me/393923625307" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider hover:bg-green-500 transition">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Scrivi su WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dati Legali Obbligatori (P.IVA, PEC, Policy) -->
+    <div class="border-t border-stone-800/80 pt-6 text-xs text-stone-400 text-center max-w-6xl mx-auto px-4">
+      <div class="mb-3">
+        <p class="font-semibold text-stone-300">'O PROFESSORE PIZZA di Ubaldo Brunetti</p>
+        <p>Sede Legale: Viale dei Promontori 388, 00122 Ostia Lido (RM) • P.IVA: 01234567890 • Codice Fiscale: BRNBLD75A01H501Z</p>
+        <p>PEC: oprofessorepizza@pec.it • REA: RM-1234567</p>
+      </div>
+
+      <div class="flex justify-center space-x-4 my-3 text-brand-gold text-xs">
+        <button onclick="openModal('privacy-modal')" class="hover:underline">Privacy Policy (Art. 13 GDPR)</button>
+        <span>•</span>
+        <button onclick="openModal('cookie-modal')" class="hover:underline">Cookie Policy</button>
+        <span>•</span>
+        <button onclick="reopenCookieBanner()" class="hover:underline">Preferenze Cookie</button>
+      </div>
+
+      <p class="text-[11px] text-stone-500 mt-2">
+        © 2026 'O Professore Pizza. Tutti i diritti riservati. Conformità GDPR e Direttiva ePrivacy (UE).
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal Privacy Policy -->
+  <div id="privacy-modal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4">
+    <div class="bg-brand-dark border border-brand-gold/40 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl">
+      <div class="p-5 border-b border-stone-800 flex justify-between items-center">
+        <h3 class="font-serif text-lg font-bold text-brand-gold">Informativa sulla Privacy (Art. 13 GDPR)</h3>
+        <button onclick="closeModal('privacy-modal')" class="text-stone-400 hover:text-white text-xl font-bold">&times;</button>
+      </div>
+      <div class="p-6 overflow-y-auto text-xs text-stone-300 space-y-4">
+        <p><strong>1. Titolare del Trattamento:</strong> Il titolare del trattamento dei dati è 'O Professore Pizza di Ubaldo Brunetti, con sede in Viale dei Promontori 388, 00122 Ostia Lido (RM), P.IVA 01234567890, Email PEC: oprofessorepizza@pec.it.</p>
+        <p><strong>2. Tipologia di dati trattati:</strong> Il presente sito ha carattere prevalentemente informativo. Qualora l'utente contatti la struttura tramite telefono o WhatsApp, verranno trattati unicamente i dati personali forniti volontariamente (es. nome, recapito telefonico, indirizzo di consegna) per consentire l'evasione degli ordini.</p>
+        <p><strong>3. Finalità e Base Giuridica:</strong> La base giuridica del trattamento è l'esecuzione di misure precontrattuali o contrattuali (Art. 6.1.b GDPR) inerenti alla fornitura dei prodotti di pizzeria/rosticceria richiesti dall'utente.</p>
+        <p><strong>4. Modalità di Trattamento e Conservazione:</strong> I dati personali sono trattati con strumenti manuali ed informatici per il tempo strettamente necessario all'evasione dell'ordine e agli adempimenti fiscali/amministrativi previsti dalla legge.</p>
+        <p><strong>5. Diritti dell'Interessato:</strong> Ai sensi degli artt. 15-22 del Regolamento UE 2016/679, l'utente può esercitare in qualsiasi momento il diritto di accesso, rettifica, cancellazione o limitazione del trattamento inviando una comunicazione alla PEC del titolare.</p>
+      </div>
+      <div class="p-4 border-t border-stone-800 text-right">
+        <button onclick="closeModal('privacy-modal')" class="bg-brand-gold text-brand-dark font-bold px-4 py-2 rounded-lg text-xs">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Cookie Policy -->
+  <div id="cookie-modal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4">
+    <div class="bg-brand-dark border border-brand-gold/40 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl">
+      <div class="p-5 border-b border-stone-800 flex justify-between items-center">
+        <h3 class="font-serif text-lg font-bold text-brand-gold">Informativa Cookie (Cookie Policy)</h3>
+        <button onclick="closeModal('cookie-modal')" class="text-stone-400 hover:text-white text-xl font-bold">&times;</button>
+      </div>
+      <div class="p-6 overflow-y-auto text-xs text-stone-300 space-y-4">
+        <p><strong>Cosa sono i Cookie:</strong> I cookie sono brevi file di testo che i siti visitati inviano al terminale dell'utente dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva.</p>
+        <p><strong>Cookie utilizzati da questo sito:</strong></p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Cookie Tecnici Essenziali:</strong> Utilizzati unicamente per memorizzare le preferenze di consenso dell'utente (es. accettazione del banner privacy). Non richiedono consenso preventivo.</li>
+          <li><strong>Cookie Analitici/Terze Parti:</strong> Attualmente il sito non fa uso di cookie di tracciamento pubblicitario o profilazione commerciale di terze parti senza previo consenso esplicito.</li>
+        </ul>
+        <p><strong>Gestione delle preferenze:</strong> L'utente può modificare o revocare il proprio consenso in qualsiasi momento utilizzando l'apposito link "Preferenze Cookie" presente nel piè di pagina del sito.</p>
+      </div>
+      <div class="p-4 border-t border-stone-800 text-right">
+        <button onclick="closeModal('cookie-modal')" class="bg-brand-gold text-brand-dark font-bold px-4 py-2 rounded-lg text-xs">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner Cookie GDPR / ePrivacy -->
+  <div id="cookie-banner" class="fixed bottom-0 inset-x-0 z-50 bg-stone-900 border-t border-brand-gold/40 p-4 md:p-6 shadow-2xl hidden">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-xs text-stone-300 space-y-1">
+        <p class="font-bold text-white text-sm">Informativa sulla Privacy & Cookie</p>
+        <p>Utilizziamo cookie tecnici essenziali per garantire il funzionamento del sito. Con il tuo consenso potremo utilizzare cookie analitici per migliorare l'esperienza di navigazione. Puoi accettare tutti i cookie, rifiutarli o personalizzare le tue scelte. Per maggiori dettagli consulta la nostra <button onclick="openModal('privacy-modal')" class="text-brand-gold underline">Privacy Policy</button>.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 shrink-0">
+        <button onclick="acceptCookies('technical')" class="bg-stone-700 hover:bg-stone-600 text-white font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider transition">Solo Tecnici</button>
+        <button onclick="acceptCookies('all')" class="bg-brand-gold hover:bg-yellow-400 text-brand-dark font-bold px-5 py-2 rounded-xl text-xs uppercase tracking-wider transition">Accetta Tutti</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Filtro categorie menu
+    function filterCategory(cat, btn) {
+      const items = document.querySelectorAll('.menu-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(b => {
+        b.classList.remove('bg-brand-gold', 'text-brand-dark');
+        b.classList.add('bg-stone-800', 'text-stone-300');
+      });
+
+      btn.classList.remove('bg-stone-800', 'text-stone-300');
+      btn.classList.add('bg-brand-gold', 'text-brand-dark');
+
+      items.forEach(item => {
+        if(cat === 'all' || item.classList.contains(cat)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Gestione Modali Legali
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Gestione Banner Cookie & LocalStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      const consent = localStorage.getItem('oprofessore_cookie_consent');
+      if (!consent) {
+        document.getElementById('cookie-banner').classList.remove('hidden');
+      }
+    });
+
+    function acceptCookies(type) {
+      localStorage.setItem('oprofessore_cookie_consent', type);
+      document.getElementById('cookie-banner').classList.add('hidden');
+    }
+
+    function reopenCookieBanner() {
+      document.getElementById('cookie-banner').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
